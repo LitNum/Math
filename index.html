@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ray's Arithmetic - Lesson 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Let's Count!</h1>
+    <p>Click the apples to count:</p>
+    <div id="apples">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" alt="Apple" class="apple" onclick="countApple()" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" alt="Apple" class="apple" onclick="countApple()" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" alt="Apple" class="apple" onclick="countApple()" />
+    </div>
+    <p id="countResult">You counted 0 apples.</p>
+    <audio id="audio" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fef6e4;
+    color: #001858;
+}
+h1 {
+    color: #f582ae;
+}
+.apple {
+    width: 100px;
+    margin: 10px;
+    cursor: pointer;
+}
+let count = 0;
+function countApple() {
+    count++;
+    document.getElementById("countResult").innerText = "You counted " + count + " apples.";
+    document.getElementById("audio").play();
+}
